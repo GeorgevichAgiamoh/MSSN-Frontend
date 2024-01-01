@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+    <!--Scrips for chart and calendar-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+
+    <script>
+        // Load the Google Chart library
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Function to draw the Google Chart
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Task", "Hours per Day"],
+                ["Male", 11],
+                ["Female", 2],
+            ]);
+
+            // Set chart options
+            var options = {
+                colors: ["#ccc670", "#024126"],
+                title: "My Chart",
+                legend: { position: "bottom", alignment: "start" }, // Legend at the bottom left
+                chartArea: {
+                    top: 10,
+                    right: 10,
+                    bottom: 40,
+                    left: 40,
+                    backgroundColor: '#024126a' // this is important!
+                }, // Chart at the top right
+            };
+
+            var chart = new google.visualization.PieChart(
+                document.getElementById("chart-container")
+            );
+
+
+            chart.draw(data, options);
+        }
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand">
+            <img src="/images/logoBg.png" alt="" class="img-fluid" width="100">
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-1 w-100">
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-folder-open"></i>
+                    Directory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-handshake"></i>
+                    Partners
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-balance-scale"></i> Workflow
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-book-open"></i> E-curriculum
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-file-invoice"></i>
+                    Accounting
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-boxes"></i>
+                    Inventory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class=" my-container">
+        <nav class="nav bg-white shadow-sm sticky-top d-flex justify-content-between">
+            <div class="d-flex m-3">
+                <button class="btn btn-sm" id="menu-btn"><i class="fal fa-bars text-green fw-bolder"></i></button>
+                <h2 class="fs-5 text-green fw-bolder ps-2 mt-1">Overview</h2>
+            </div>
+            <div class="d-flex mt-3">
+                <a class="nav-link" href="#">
+                    <div type="button" class=" position-relative">
+                        <i class="fal fa-bell text-green fw-bolder"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="/images/headerImage.png" alt="" class="img-fluid thumbnail rounded-circle bg2 p-1">
+                </a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content px-3 pt-4">
+            <h2 class="fs-5 text-green fw-bolder">Hello Admin</h2>
+            <p class="text-green fw-bolder">Good morning, Welcome to your Dashboard</p>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="card cardBg rounded rounded-4 mb-2 border-0 shadow">
+                        <div class="card-body">
+                            <div class="text-end">
+                                <img src="/images/admin1.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="">
+                                <span class="light-green-text fw-bolder">Members</span> <br>
+                                <span id="memberNo" class="text-green fw-bolder">19670</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="card cardBg rounded rounded-4 mb-2 border-0 shadow">
+                        <div class="card-body">
+                            <div class="text-end">
+                                <img src="/images/Admin2.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="">
+                                <span class="light-green-text fw-bolder">Branches</span> <br>
+                                <span id="branchesNo" class="text-green fw-bolder">19670</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="card cardBg rounded rounded-4 mb-2 border-0 shadow">
+                        <div class="card-body">
+                            <div id="chart-container" style="width: 100%; height: 100px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center my-3">
+                <div class="col-sm-12 col-md-12 col-lg-5 h-100">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div id='calendar'></div>
+                            <div class="d-flex justify-content-between pt-3">
+                                <a href="#" class="text-decoration-none small text-green fw-bolder">Create
+                                    Event <i class="fal fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-7 mb-3">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-transparent border-0 yellowText"> <img
+                                src="/images/Upcoming-Event.png" class="img-fluid" width="25"> Upcoming Events
+                        </div>
+                        <div class=" card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Event Title</th>
+                                            <th>Event Date</th>
+                                            <th>Venue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Table Cell
+                                            </td>
+                                            <td class="small text-muted">Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class="d-flex justify-content-between pt-3">
+                                    <a href="#" class="text-decoration-none small text-green fw-bolder">View All
+                                        Event <i class="fal fa-arrow-alt-circle-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center my-3">
+                <div class="col-sm-12">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-transparent border-0 yellowText"> <img src=" /images/Request.png"
+                                class="img-fluid" width="25"> Request
+                        </div>
+                        <div class=" card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Request Type</th>
+                                            <th>Number of request</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Profile update request
+                                            </td>
+                                            <td class="small text-muted">21</td>
+                                            <td><a href="#" class="text-decoration-none small text-green fw-bolder">View
+                                                    All</a></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Profile update request
+                                            </td>
+                                            <td class="small text-muted">21</td>
+                                            <td><a href="#" class="text-decoration-none small text-green fw-bolder">View
+                                                    All</a></td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">Profile update request
+                                            </td>
+                                            <td class="small text-muted">21</td>
+                                            <td><a href="#" class="text-decoration-none small text-green fw-bolder">View
+                                                    All</a></td>
+
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="text-decoration-none small text-green fw-bolder">View All
+                                        Event</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center my-3">
+                <div class="col-sm-12">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-transparent border-0 yellowText"> <img src="/images/Announcement.png"
+                                class="img-fluid" width="25"> Announcement
+                        </div>
+                        <div class=" card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
+                                                faucibus id sed pellentesque...
+                                            </td>
+                                            <td class="small text-muted">28/02/21</td>
+                                            <td><a href="#"
+                                                    class="text-decoration-none small text-green fw-bolder">View</a>
+                                            </td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-trash-alt text-danger text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
+                                                faucibus id sed pellentesque...
+                                            </td>
+                                            <td class="small text-muted">28/02/21</td>
+                                            <td><a href="#"
+                                                    class="text-decoration-none small text-green fw-bolder">View</a>
+                                            </td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-trash-alt text-danger text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted small text-wrap w-50">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum
+                                                faucibus id sed pellentesque...
+                                            </td>
+                                            <td class="small text-muted">28/02/21</td>
+                                            <td><a href="#"
+                                                    class="text-decoration-none small text-green fw-bolder">View</a>
+                                            </td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-trash-alt text-danger text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="text-decoration-none small text-green fw-bolder">
+                                        View All
+                                        Announcement <i
+                                            class="fal fa-arrow-right text-green text-success small fw-bolder"></i></a>
+
+                                    <a href="#" class="text-decoration-none small text-green fw-bolder">
+                                        Make
+                                        Announcement <i
+                                            class="fal fa-arrow-right text-green text-success small fw-bolder"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center my-3">
+                <div class="col-sm-12">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-transparent border-0 yellowText"> <img src="/images/Announcement.png"
+                                class="img-fluid" width="25"> E-VOTING RESULTS
+                        </div>
+                        <div class=" card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-5">
+                                    <div class="card cardBg rounded rounded-5 mb-2 border-0 shadow">
+                                        <div class="card-body d-flex justify-content-between">
+
+                                            <div class="">
+                                                <span id="memberNo" class="text-green fw-bolder h4">20000
+                                                    VOTES</span>
+                                                <br>
+                                                <span class="light-green-text fw-bolder">cANDIDATE A </span> <br>
+                                                <span id="memberNo" class="text-green fw-bolder h4">CHAIRMAN</span>
+                                            </div>
+                                            <div class="">
+                                                <img src="/images/admin1.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="card cardBg rounded rounded-5 mb-2 border-0 shadow">
+                                        <div class="card-body d-flex justify-content-between">
+
+                                            <div class="">
+                                                <span id="memberNo" class="text-green fw-bolder h4">19000
+                                                    VOTES</span>
+                                                <br>
+                                                <span class="light-green-text fw-bolder">cANDIDATE B </span> <br>
+                                                <span id="memberNo" class="text-green fw-bolder h4">CHAIRMAN</span>
+                                            </div>
+                                            <div class="">
+                                                <img src="/images/admin1.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="/script.js"></script>
+</body>
+
+</html>

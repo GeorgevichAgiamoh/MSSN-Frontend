@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Dashboard Populated</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand">
+            <img src="/images/logoBg.png" alt="" class="img-fluid" width="100">
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-1 w-100">
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-folder-open"></i>
+                    Directory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-handshake"></i>
+                    Partners
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-balance-scale"></i> Workflow
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-book-open"></i> E-curriculum
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-file-invoice"></i>
+                    Accounting
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-boxes"></i>
+                    Inventory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class=" my-container">
+        <nav class="nav bg-white shadow-sm sticky-top d-flex justify-content-between">
+            <div class="d-flex m-3">
+                <button class="btn btn-sm" id="menu-btn"><i class="fal fa-bars text-green fw-bolder"></i></button>
+                <h2 class="fs-5 text-green fw-bolder ps-2 mt-1">Workflow</h2>
+            </div>
+            <div class="d-flex mt-3">
+                <a class="nav-link" href="#">
+                    <div type="button" class=" position-relative">
+                        <i class="fal fa-bell text-green fw-bolder"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="/images/headerImage.png" alt="" class="img-fluid thumbnail rounded-circle bg2 p-1">
+                </a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content px-3 pt-4">
+            <div class="row justify-content-center mt-3">
+                <div class="col-sm-8">
+                    <div class="card shadow border-0 rounded mb-4">
+                        <div
+                            class="card-header bg-transparent border-0 yellowText h5 fw-bolder d-flex justify-content-between my-2">
+                            <div>
+                                <img src="/images/Upcoming-Event.png"> Events
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#eventModal">
+                                New Event <i class="fal fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-body py-5">
+                            <div class="">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Event Title</th>
+                                                <th>Event Date</th>
+                                                <th>Venue</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Table Cell
+                                                </td>
+                                                <td>Table Cell</td>
+                                                <td>Table Cell</td>
+                                                <td><a href="#" class="text-decoration-none small"><i
+                                                            class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Table Cell
+                                                </td>
+                                                <td>Table Cell</td>
+                                                <td>Table Cell</td>
+                                                <td><a href="#" class="text-decoration-none small"><i
+                                                            class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Table Cell
+                                                </td>
+                                                <td>Table Cell</td>
+                                                <td>Table Cell</td>
+                                                <td><a href="#" class="text-decoration-none small"><i
+                                                            class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                    <div class="d-flex justify-content-between pt-3">
+                                        <a href="#" class="text-decoration-none small text-green fw-bolder">View All
+                                            Event <i class="fal fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0 rounded mb-4">
+                        <div
+                            class="card-header bg-transparent border-0 yellowText h5 fw-bolder d-flex justify-content-between my-2">
+                            <div>
+                                <img src="/images/Request.png"> Request
+                            </div>
+                        </div>
+                        <div class="card-body py-5">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Request Type</th>
+                                            <th>Number of request</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Leave request
+                                            </td>
+                                            <td>23</td>
+                                            <td><a href="#" class="text-decoration-none text-green">View All</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0 rounded mb-4">
+                        <div
+                            class="card-header bg-transparent border-0 yellowText h5 fw-bolder d-flex justify-content-between my-2">
+                            <div>
+                                <img src="/images/total-dues.png"> Dues
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#dues">
+                                Create Dues <i class="fal fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-body py-5">
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Tiers</th>
+                                            <th>Description</th>
+                                            <th>Due Date</th>
+                                            <th>Amount</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Monthly dues
+                                            </td>
+                                            <td>
+                                                Flat rate
+                                            </td>
+                                            <td>In this model, everyone pays the same amount.....</td>
+                                            <td>24th of every month</td>
+                                            <td>N20000</td>
+                                            <td><a href="#" class="text-decoration-none small"><i
+                                                        class="fal fa-ellipsis-v text-success small fw-bolder"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div class="d-flex justify-content-between pt-3">
+                                    <a href="#" class="text-decoration-none small text-green fw-bolder">View All
+                                        Dues <i class="fal fa-arrow-alt-circle-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0 rounded mb-4">
+                        <div
+                            class="card-header bg-transparent border-0 yellowText h5 fw-bolder d-flex justify-content-between my-2">
+                            <div>
+                                <img src="/images/memos.png"> Create Memos
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#memo">
+                                Create Memos <i class="fal fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-body py-5">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Memo Title</th>
+                                            <th>Memo Date</th>
+                                            <th>Sent By</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Table Cell
+                                            </td>
+                                            <td>Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none text-green">View All</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow border-0 rounded mb-4">
+                        <div
+                            class="card-header bg-transparent border-0 yellowText h5 fw-bolder d-flex justify-content-between my-2">
+                            <div>
+                                <img src="/images/memos.png"> E - VOTING
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#election">
+                                Create Election <i class="fal fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="card-body py-5">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Memo Title</th>
+                                            <th>Memo Date</th>
+                                            <th>Sent By</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Table Cell
+                                            </td>
+                                            <td>Table Cell</td>
+                                            <td>Table Cell</td>
+                                            <td><a href="#" class="text-decoration-none text-green">View All</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="">
+                    <!-- Modal events-->
+                    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row g-3">
+                                        <div class="col-12">
+                                            <label for="eventDate" class="form-label">Select
+                                                Date</label>
+                                            <input type="date" class="form-control border-0" id="eventDate"
+                                                placeholder="Pick a date">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="eventTitle" class="form-label">Event
+                                                Title</label>
+                                            <input type="text" class="form-control border-0" id="eventTitle"
+                                                placeholder="Type Event title">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="startTime" class="form-label">Start Time</label>
+                                            <input type="time" class="form-control border-0" id="startTime"
+                                                placeholder="00:00hrs">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="endTime" class="form-label">End Time</label>
+                                            <input type="time" class="form-control border-0" id="endTime"
+                                                placeholder="00:00hrs">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Venue" class="form-label">Venue</label>
+                                            <input type="text" class="form-control border-0" id="Venue"
+                                                placeholder="Type Venue here">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Description" class="form-label">Add Description
+                                                - 100
+                                                words Maximum</label>
+                                            <textarea class="form-control bg2" id="Description" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary">Create
+                                                event</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <!-- Modal -->
+                    <div class="modal fade" id="memo" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row g-3">
+
+                                        <div class="col-12">
+                                            <label for="memoTitle" class="form-label">
+                                                Memo Title
+                                            </label>
+                                            <input type="text" class="form-control border-0" id="memoTitle"
+                                                placeholder="Type Event title">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="memoDate" class="form-label">
+                                                Memo Title
+                                            </label>
+                                            <input type="date" class="form-control border-0" id="memoDate">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="notify">To:</label>
+                                            <input type="radio" id="all" name="notify" value="all">
+                                            <label for="all">All</label>
+
+                                            <input type="radio" id="allStaffs" name="notify" value="allStaffs">
+                                            <label for="allStaffs">All Staffs</label>
+
+                                            <input type="radio" id="admin" name="notify" value="admin">
+                                            <label for="admin">Admin</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Description" class="form-label">Add Description
+                                                - 100
+                                                words Maximum</label>
+                                            <textarea class="form-control bg2" id="Description" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary">Create
+                                                Memo</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <!-- Modal -->
+                    <div class="modal fade" id="dues" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row g-3">
+                                        <div class="col-12">
+                                            <label for="title" class="form-label">Title</label>
+                                            <input type="date" class="form-control border-0" id="title"
+                                                placeholder="ex. Monthly dues">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="duesInterval" class="form-label">
+                                                Dues Interval</label>
+                                            <input type="text" class="form-control border-0" id="duesInterval"
+                                                placeholder="Type Event title">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="date" class="form-label">Due Date</label>
+                                            <input type="date" class="form-control border-0" id="date">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="amount" class="form-label">Amount</label>
+                                            <input type="text" class="form-control border-0" id="amount"
+                                                placeholder="N0.00">
+                                        </div>
+
+                                        <span>Dues Tiers</span>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input bg-primary" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Flat Rate
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input bg-primary" type="checkbox" value=""
+                                                    id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Tiered
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <label for="lowAmount" class="form-label">Low Amount</label>
+                                            <input type="number" class="form-control border-0" id="lowAmount"
+                                                placeholder="N0.00">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="highAmount" class="form-label">High Amount</label>
+                                            <input type="time" class="form-control border-0" id="highAmount"
+                                                placeholder="N0.00">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Description" class="form-label">Add Description
+                                                - 100
+                                                words Maximum</label>
+                                            <textarea class="form-control bg2" id="Description" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary">Create
+                                                Dues</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                    <!-- Modal -->
+                    <div class="modal fade" id="election" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row g-3">
+                                        <div class="col-12">
+                                            <label for="date" class="form-label">Select Date</label>
+                                            <input type="date" class="form-control border-0" id="date">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="title" class="form-label">Election Title</label>
+                                            <input type="date" class="form-control border-0" id="title"
+                                                placeholder="ex. Monthly dues">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="start" class="form-label">Start Time</label>
+                                            <input type="time" class="form-control border-0" id="start"
+                                                placeholder="00:00hrs">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="end" class="form-label">End Time</label>
+                                            <input type="time" class="form-control border-0" id="end"
+                                                placeholder="00:00hrs">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Candidate" class="form-label">Candidate</label>
+                                            <input type="text" class="form-control border-0" id="Candidate">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="Description" class="form-label">Add Description
+                                                - 100
+                                                words Maximum</label>
+                                            <textarea class="form-control bg2" id="Description" rows="3"></textarea>
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary">
+                                                Create election</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        new DataTable('#example');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="/script.js"></script>
+</body>
+
+</html>

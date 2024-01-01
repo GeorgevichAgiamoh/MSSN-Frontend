@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Member Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <ul class="nav justify-content-center bg1 p-3">
+        <li class="nav-item">
+            <a class="nav-link text-white fs-6 fw-bold" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white fs-6 fw-bold" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white fs-6 fw-bold" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white fs-6 fw-bold" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-green fs-6 fw-bold btn btn-secondary btn-sm rounded" href="#">Register</a>
+        </li>
+    </ul>
+
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <div class="my-5 p-5">
+
+                <div class="text-center gap-5">
+                    <h2 class="text-green fw-bolder">Create an Account</h2>
+                </div>
+
+                <div class="alert alert-primary alert-dismissible fade show text-center my-5" role="alert">
+                    <strong>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        Information: Fields marked * are
+                        compulsory.
+                    </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                <form action="">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="firstName" class="form-label fw-bolder fs-5">*First Name</label>
+                            <input type="text" class="form-control form-control-lg" id="firstName" placeholder="musa"
+                                required>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="lastName" class="form-label fw-bolder fs-5">*Last Name</label>
+                            <input type="text" class="form-control form-control-lg" id="lastName" placeholder="Abdul"
+                                required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="inputEmail" class="form-label fw-bolder fs-5">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" id="inputEmail"
+                                placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="phoneNo" class="form-label fw-bolder fs-5">*Phone Number</label>
+                            <input type="tel" class="form-control form-control-lg" id="phoneNo"
+                                placeholder="081234567890" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="inputBranch" class="form-label fw-bolder fs-5">*Branch</label>
+                            <select id="inputBranch" class="form-select form-select-lg" required>
+                                <option selected>Choose...</option>
+                                <option>FCT</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="gender" class="form-label fw-bolder fs-5">*Gender</label>
+                            <select id="gender" class="form-select form-select-lg" required>
+                                <option selected>Choose...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="occupation" class="form-label fw-bolder fs-5">*Occupation</label>
+                            <select id="occupation" class="form-select form-select-lg" required>
+                                <option selected>Choose...</option>
+                                <option>Student</option>
+                                <option>Employed</option>
+                                <option>Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="occupationName" class="form-label fw-bolder fs-5">*Occupation Name</label>
+                            <input type="text" class="form-control form-control-lg" id="occupationName"
+                                placeholder="Name of school or employer" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="occupationAddress" class="form-label fw-bolder fs-5">*Occupation Address</label>
+                            <input type="text" class="form-control form-control-lg" id="occupationAddress"
+                                placeholder="Address of school or employer" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="maritalStatus" class="form-label fw-bolder fs-5">*Marital Status</label>
+                            <select id="maritalStatus" class="form-select form-select-lg" required>
+                                <option selected>Choose...</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="WhatsappNo" class="form-label fw-bolder fs-5">*Whatsapp Number</label>
+                            <input type="tel" class="form-control form-control-lg" id="WhatsappNo"
+                                placeholder="081234567890" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="kinName" class="form-label fw-bolder fs-5">*Next of Kin Name</label>
+                            <input type="text" class="form-control form-control-lg" id="kinName"
+                                placeholder="David Anusam" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="kinRelationship" class="form-label fw-bolder fs-5">*Next of Kin
+                                Relationship</label>
+                            <select id="kinRelationship" class="form-select form-select-lg" required>
+                                <option selected>Choose...</option>
+                                <option>Parent</option>
+                                <option>Sibling</option>
+                                <option>Family</option>
+                                <option>Friend</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="kinAddress" class="form-label fw-bolder fs-5">*Next of Kin Address</label>
+                            <input type="text" class="form-control form-control-lg" id="kinAddress"
+                                placeholder="1234 Main St" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="kinNumber" class="form-label fw-bolder fs-5">*Next of Kin Phone Number</label>
+                            <input type="tel" class="form-control form-control-lg" id="kinNumber"
+                                placeholder="081234567890" required>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="Createpassword" class="form-label fw-bolder fs-5">*Create Password</label>
+                            <div class="password-container">
+                                <input type="password" id="passwordInput"
+                                    class="form-control form-control-lg password-input" placeholder="Password" required>
+                                <span class="show-password-icon" onclick="togglePassword()">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <label for="Confirmpassword" class="form-label fw-bolder fs-5">*Confirm Password</label>
+                            <div class="password-container">
+                                <input type="password" id="passwordInput"
+                                    class="form-control form-control-lg password-input" placeholder="Password" required>
+                                <span class="show-password-icon" onclick="togglePassword()">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg fs-5">CREATE ACCOUNT</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="text-center my-4">
+                    <span class="text-green fs-4">Already have an account?
+                        <a href="./PriviledgedAcccess.html" class="text-green text-decoration-underline">Sign
+                            In
+                        </a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        </script>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("passwordInput");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

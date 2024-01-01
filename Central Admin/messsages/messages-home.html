@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <title>Messages-Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand">
+            <img src="/images/logoBg.png" alt="" class="img-fluid" width="100">
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-1 w-100">
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-folder-open"></i>
+                    Directory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-handshake"></i>
+                    Partners
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-balance-scale"></i> Workflow
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-book-open"></i> E-curriculum
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-file-invoice"></i>
+                    Accounting
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-boxes"></i>
+                    Inventory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class=" my-container">
+        <nav class="nav bg-white shadow-sm sticky-top d-flex justify-content-between">
+            <div class="d-flex m-3">
+                <button class="btn btn-sm" id="menu-btn"><i class="fal fa-bars text-green fw-bolder"></i></button>
+                <h2 class="fs-5 text-green fw-bolder ps-2 mt-1">Messages</h2>
+            </div>
+            <div class="d-flex mt-3">
+                <a class="nav-link" href="#">
+                    <div type="button" class=" position-relative">
+                        <i class="fal fa-bell text-green fw-bolder"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="/images/headerImage.png" alt="" class="img-fluid thumbnail rounded-circle bg2 p-1">
+                </a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content px-3 pt-4">
+            <div class="row justify-content-center mb-3">
+                <div class="col-sm-11">
+                    <div class="row justify-content-center">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <span class="input-group-text border-0" id="basic-addon1"> <i
+                                                class="fal fa-filter"></i></span>
+                                        <select class="form-select bg-white border-0" aria-label="Small select example"
+                                            aria-label="Filter select">
+                                            <option selected>Filter</option>
+                                            <option value="First Name">First Name</option>
+                                            <option value="Last Name">Last Name</option>
+                                            <option value="Division">Division</option>
+                                            <option value="Member Id">Member Id</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <span class="input-group-text border-0" id="basic-addon1"> <i
+                                                class="fal fa-sort"></i></span>
+                                        <select class="form-select bg-white border-0" aria-label="Small select example"
+                                            aria-label="Filter select">
+                                            <option selected>Sort</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <span class="input-group-text border-0" id="basic-addon1"><i
+                                                class="fal fa-search"></i></span>
+                                        <input type="text" class="form-control bg-white border-0" placeholder="Username"
+                                            aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-primary btn-sm">Search</button>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <span class="input-group-text border-0" id="basic-addon1"> <i
+                                                class="fal fa-list"></i></span>
+                                        <select class="form-select bg-white border-0" aria-label="Small select example"
+                                            aria-label="Filter select">
+                                            <option selected>Entries</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-warning btn-sm small text-white" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            NEW MESSAGE
+                            <i class="fal fa-envelope-open"></i>
+                        </button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active rounded-pill small" id="pills-home-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
+                                        aria-controls="pills-home" aria-selected="true">Outbox</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link rounded-pill small" id="pills-profile-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">Inbox</button>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab" tabindex="0">
+
+                                    <div class="row justify-content-center">
+                                        <div class="card shadow border-0">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="example" class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </th>
+                                                                <th>Sent To</th>
+                                                                <th>Message</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Mariam Yakubu
+                                                                    CC: Fatima Usman</td>
+                                                                <td>Lorem ipsum dolor sit amet, consectetur
+                                                                    adipiscing...</td>
+                                                                <td>12/2/2021 ; 3:46PM</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn dropdown-toggle"
+                                                                            type="button" data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            <i class="fal fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="./messages-letter.html">View</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab" tabindex="0">
+
+                                    <div class="row justify-content-center">
+                                        <div class="card shadow border-0">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="example" class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </th>
+                                                                <th>Received From</th>
+                                                                <th>Message</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Mariam Yakubu</td>
+                                                                <td>Lorem ipsum dolor sit amet, consectetur
+                                                                    adipiscing...</td>
+                                                                <td>12/2/2021 ; 3:46PM</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn dropdown-toggle"
+                                                                            type="button" data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            <i class="fal fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="./messages-letter.html">View</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg1 text-white">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">New message</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control border-0 border-bottom bg-white"
+                                                id="exampleFormControlInput1" placeholder="To:">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control border-0 border-bottom bg-white"
+                                                id="exampleFormControlInput1" placeholder="Subject:">
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                        </div>
+                                        <div class="text-end border-0 border-top py-2">
+                                            <button type="submit" class="btn btn-primary btn-sm">SEND
+                                                MESSAGE</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="/script.js"></script>
+    <script>
+        new DataTable('#example');
+    </script>
+</body>
+
+</html>

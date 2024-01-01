@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <title>Messages-Letter</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand">
+            <img src="/images/logoBg.png" alt="" class="img-fluid" width="100">
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-1 w-100">
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-folder-open"></i>
+                    Directory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-handshake"></i>
+                    Partners
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-balance-scale"></i> Workflow
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-book-open"></i> E-curriculum
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-file-invoice"></i>
+                    Accounting
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-boxes"></i>
+                    Inventory
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-cog"></i>
+                    Settings
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class=" my-container">
+        <nav class="nav bg-white shadow-sm sticky-top d-flex justify-content-between">
+            <div class="d-flex m-3">
+                <button class="btn btn-sm" id="menu-btn"><i class="fal fa-bars text-green fw-bolder"></i></button>
+                <h2 class="fs-5 text-green fw-bolder ps-2 mt-1">Messages</h2>
+            </div>
+            <div class="d-flex mt-3">
+                <a class="nav-link" href="#">
+                    <div type="button" class=" position-relative">
+                        <i class="fal fa-bell text-green fw-bolder"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="/images/headerImage.png" alt="" class="img-fluid thumbnail rounded-circle bg2 p-1">
+                </a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content px-3 pt-4">
+            <div class="mb-3">
+                <a href="./messages-home.html" class="text-green"> <i class="fal fa-chevron-left"></i> Go
+                    Back</a>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-sm-10">
+                    <div class="card shadow border-0 rounded">
+                        <div class="card-header bg-transparent border-0">
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <div>
+                                        <img src="/images/Mask Group.png" alt="">
+                                    </div>
+                                    <div>
+                                        <span class="text-green small">Sent By:</span> <br>
+                                        <span class="text-green small">Mr Ahmed Musa- Member</span>
+                                    </div>
+                                </div>
+                                <div class="col text-end">
+                                    <span class="date text-green small">20/05/2021</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title text-green fw-bolder h5 text-center">Resignation Letter</h1>
+                            <div class="card-text small">
+                                Lorem ipsum dolor sit amet consectetur. Cursus consectetur urna nec sit et velit sem
+                                aenean. Sollicitudin posuere tincidunt egestas posuere facilisis. Rutrum ultricies
+                                sed
+                                id dui facilisi vitae massa faucibus. Faucibus quam dolor neque dolor pellentesque
+                                convallis in id nunc. Iaculis in convallis est bibendum metus pellentesque nulla.
+                                Ipsum
+                                nullam duis dui consectetur ut arcu aliquet et at. Mi lacus turpis euismod sagittis
+                                urna
+                                auctor mauris. Quis egestas amet cras cras nunc tellus habitant velit. Vitae
+                                maecenas id
+                                iaculis tellus tincidunt in vitae viverra nunc. Sit quam sed lectus mollis diam
+                                sagittis
+                                porttitor massa pulvinar. Et risus nisl ut nulla pellentesque mi eget elit. Gravida
+                                enim
+                                pellentesque egestas elit tortor.
+                                Gravida ac pharetra sagittis ut auctor ullamcorper facilisis. Convallis vitae
+                                pulvinar
+                                auctor sit. At semper sit felis sagittis vitae purus arcu. Etiam pellentesque neque
+                                condimentum arcu tortor. At ultricies purus nunc tellus proin tincidunt amet enim
+                                ipsum.
+                                Porta diam scelerisque integer euismod suspendisse odio.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row my-5">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">Reply <i class="fal fa-reply"></i></button>
+                        </div>
+
+                        <div class="col text-end">
+                            <button class="btn btn-primary btn-sm">Forward <i class="fal fa-share"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Reply Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="mb-3">
+                                    <div class="form-text small">
+                                        <span>
+                                            From- Mr Bala Muhammad
+                                            (Head of Finance)
+                                        </span> <br>
+                                        <span>
+                                            To- Mr Ahmed Musa- Member
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <textarea class="form-control bg2" id="exampleFormControlTextarea1"
+                                        rows="3"></textarea>
+                                </div>
+                                <div class="text-end border-0 border-top py-2">
+                                    <button type="submit" class="btn btn-primary btn-sm">SEND
+                                        MESSAGE</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--Message sent confirmation-->
+        </div>
+    </section>
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="/script.js"></script>
+    <script>
+        new DataTable('#example');
+    </script>
+</body>
+
+</html>

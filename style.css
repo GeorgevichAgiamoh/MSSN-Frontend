@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,300;1,400&family=Montserrat:wght@100;400;600&display=swap');
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none !important;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #024126;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #F8F8F8;
+}
+
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    margin-left: -300px;
+    background-color: #024126;
+    transition: 0.4s;
+    overflow-y: auto;
+}
+
+.nav-item .nav-link {
+    margin-bottom: 1rem;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+    background-color: #ffffff26;
+}
+
+.dropdown-menu {
+    background-color: #024126;
+}
+
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #ffffff26;
+}
+
+.my-container {
+    transition: 0.4s;
+}
+
+
+/* for navbar */
+
+.active-nav {
+    margin-left: 0;
+}
+
+
+/* for main section */
+
+.active-cont {
+    margin-left: 250px;
+}
+
+#menu-btn {
+    border: 1px solid #024126;
+    color: #fff;
+}
+
+#menu-btn:focus {
+    box-shadow: 0 0 0 0.25rem #02412644;
+}
+
+.thumbnail {
+    width: 30px;
+    height: 30px;
+}
+
+.text-green {
+    color: #024126;
+}
+
+.links{
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+input {
+    background-color: hsl(136, 33%, 91%) !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+select {
+    background-color: hsl(136, 33%, 91%) !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+input::placeholder {
+    color: #333333 !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+.form-label {
+    color: #024126 !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+.btn {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.card-body{
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+.btn-primary {
+    background: #024126 !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    border-color: #024126 !important;
+    color: #024126 !important;
+}
+
+.btn-outline-primary:hover {
+    background: #024126 !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-secondary {
+    background: #f2f1da !important;
+    border: none !important;
+    color: #024126 !important;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #024126 !important;
+    color: white !important;
+}
+
+.nav-pills .nav-link{
+    color: #024126 !important;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 50px;
+    /* Space for the icon */
+}
+
+.show-password-icon {
+    position: absolute;
+    top: 75%;
+    right: 30px;
+    transform: translateY(-70%);
+    cursor: pointer;
+}
+
+.bg6 {
+    background-color: hsl(210, 65%, 92%);
+}
+
+.bg2 {
+    background-color: hsl(136, 33%, 91%);
+}
+
+.bg3 {
+    background-color: hsl(25, 57%, 91%);
+}
+
+.bg4 {
+    background-color: hsl(53, 100%, 91%);
+}
+
+.bg5 {
+    background-color: hsl(320, 72%, 94%);
+}
+
+.bg1 {
+    background-color: #024126;
+}
+
+td{
+    font-size: 12px;
+}
+
+th{
+    font-size: 12px;
+}
+
+.text-green {
+    color: #024126;
+}
+
+.light-green-text {
+    color: #04995a;
+}
+
+.yellowText{
+    color: #CCC670;
+}
+
+
+.cardBg {
+    background-image: url("./images/Card\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+
+/*Calendar Styling*/
+.fc .fc-toolbar-title {
+    font-size: 1.2rem;
+    margin: 0px;
+}
+
+.fc-toolbar-chunk {
+    display: flex;
+    flex-direction: row;
+}
+
+.fc-today-button {
+    background-color: transparent !important;
+    border: 0.8px solid #024126 !important;
+    color: #024126 !important;
+    font-size: 10px;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1rem;
+    margin: 0px;
+    color: #CCC670;
+}
+
+.fc-toolbar-chunk {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.7rem;
+}
+
+.fc-prev-button,
+.fc-next-button {
+    background-color: #024126 !important;
+    border: 0.8px solid #024126 !important;
+    color: #fff !important;
+}
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 0.8rem;
+}
+
+.fc .fc-scroller-liquid-absolute {
+    inset: 0px;
+    position: absolute;
+    font-size: 0.8rem;
+}
+
+/*Calendar Styling Ends*/

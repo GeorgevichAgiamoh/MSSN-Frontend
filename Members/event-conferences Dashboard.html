@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event and Conferences Dashboard</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/style.css">
+    <!--Scrips for chart and calendar-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand">
+            <img src="/images/logoBg.png" alt="" class="img-fluid" width="100">
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-1 w-100">
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-calendar"></i>
+                    Events & Conferences
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-credit-card"></i>
+                    Payments
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-envelope"></i>
+                    Messages
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-chalkboard-teacher"></i>
+                    Digital Literacy
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-user-cog"></i>
+                    User Profile
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-headphones"></i>
+                    Support
+                </a>
+            </li>
+
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light px-3 py-2 d-block">
+                    <i class="fal fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class=" my-container">
+        <nav class="nav bg-white shadow-sm sticky-top d-flex justify-content-between">
+            <div class="d-flex m-3">
+                <button class="btn btn-sm" id="menu-btn"><i class="fal fa-bars text-green fw-bolder"></i></button>
+                <h2 class="fs-5 text-green fw-bolder ps-2 mt-1">Events & Conferences</h2>
+            </div>
+            <div class="d-flex mt-3">
+                <a class="nav-link" href="#">
+                    <div type="button" class=" position-relative">
+                        <i class="fal fa-bell text-green fw-bolder"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="#">
+                    <img src="/images/headerImage.png" alt="" class="img-fluid thumbnail rounded-circle bg2 p-1">
+                </a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content px-3 pt-4">
+            <div class="row justify-content-center mb-3">
+                <div class="col-sm-11">
+
+                    <div class="text-end">
+                        <div class="d-flex justify-content-end">
+                            <a href="#" class="text-decoration-none text-green fw-bolder small mx-4">All </a>
+                            <a href="#" class="text-decoration-none text-green fw-bolder small">Saved</a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active rounded-pill small" id="pills-home-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
+                                        aria-controls="pills-home" aria-selected="true">Upcoming Events</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link rounded-pill small" id="pills-profile-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">Registered Events</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link rounded-pill small" id="pills-profile-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pills-event" type="button" role="tab"
+                                        aria-controls="pills-profile" aria-selected="false">Past Events</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab" tabindex="0">
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-success">Free</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-primary">Paid</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-success">Free</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-primary">Paid</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-success">Free</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 my-2">
+                                            <div class="card border-0">
+                                                <div class="card-body border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div>
+                                                            <i
+                                                                class="fal fa-calendar-check light-green-text text-success small fw-bolder"></i>
+                                                            <span class="text-green small">30 Dec.2021</span>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <span class="badge text-bg-primary">Paid</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-title yellowText">Nigeria International Petroleum
+                                                        Summit</div>
+                                                    <div class="card-text">Nigeria International Petroleum Summit will
+                                                        focus on technology, knowledge, sustainable and partnership that
+                                                        can enhance the inflow of foreign investments while improving
+                                                        success rates of indigenous business engagements.
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a href="#" class="btn btn-primary">Register</a>
+                                                        <a href="#" class="btn btn-outline-primary">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab" tabindex="0">
+
+                                    <div class="row justify-content-center">
+                                        <div class="card shadow border-0">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table id="example" class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </th>
+                                                                <th>Received From</th>
+                                                                <th>Message</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="" id="flexCheckDefault">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Mariam Yakubu</td>
+                                                                <td>Lorem ipsum dolor sit amet, consectetur
+                                                                    adipiscing...</td>
+                                                                <td>12/2/2021 ; 3:46PM</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn dropdown-toggle"
+                                                                            type="button" data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            <i class="fal fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="./messages-letter.html">View</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-event" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab" tabindex="0">
+
+                                    <div class="row justify-content-center">
+                                        done and dusted
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="/script.js"></script>
+</body>
+
+</html>
